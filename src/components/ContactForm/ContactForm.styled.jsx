@@ -7,6 +7,7 @@ export const Forma = styled.form`
   gap: 15px;
   border: 1px solid black;
   padding: 15px;
+  background-color: #f6eded;
 `;
 
 export const FormField = styled.label`
@@ -20,4 +21,5 @@ export const FormField = styled.label`
 export const FormButton = styled.button`
   width: 100px;
   background-color: #2a6fbd;
+  color: white;
 `;

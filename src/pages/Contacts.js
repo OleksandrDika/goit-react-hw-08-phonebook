@@ -1,14 +1,20 @@
+import { fetchContacts } from 'Redux/Contacts/Operations';
 import { selectContacts, selectIsLoading } from 'Redux/Contacts/Selectors';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Conteiner } from 'components/Conteiner.styled';
 import { Filter } from 'components/Filter/Filter';
+import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div>
